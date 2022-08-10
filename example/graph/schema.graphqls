@@ -1,0 +1,104 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+}
+
+# type Query {
+#   addition(input:sum):addResponse
+# }
+# input sum{
+#   number1: Int 
+#   number2: Int
+# }
+# type addResponse{
+#   number3: Int
+#}
+
+type Query{
+  calculator(input:sol):addResult
+  fetchdata(input:ixz):[stu_output]
+  xlinput:xloutput
+  dbtoxl(input:Inpu):dataOutput
+  piechart:pieResult
+}
+
+input sol{
+  n1:Int
+  n2:Int
+  a:String
+}
+
+type addResult{
+  n3:Int
+}
+
+input NewTodo {
+  text: String!
+  userId: String!
+}
+
+type Mutation {
+  createTodo(input: NewTodo!): Todo!
+  upsertdata(input:dataInput):dataResponse
+  
+
+}
+
+input dataInput {
+  id: String
+  firstname:String!
+  lastname:String
+  dob: String!          
+  phno: String
+  bloodgroup:String!
+  address:String!
+  gender:String
+}
+
+type dataResponse{
+  id: String
+  Status:[String]!
+}
+
+input ixz{
+  output:String
+}
+ type stu_output{
+   id:String
+   fname:String
+   lname:String
+   dateob:String
+   phone:String
+   blgrp:String
+   addr:String
+   gen:String
+}
+
+type xloutput{
+  status:String
+}
+
+input Inpu{
+  inp_: String
+}
+
+
+
+type dataOutput{
+  status:String
+}
+
+type pieResult{
+  status:String
+}
